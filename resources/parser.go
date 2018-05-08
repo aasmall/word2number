@@ -3,8 +3,6 @@ package resources
 import (
 	"fmt"
 	"path"
-
-	"github.com/labstack/gommon/log"
 	y2 "gopkg.in/yaml.v2"
 )
 
@@ -48,13 +46,11 @@ func readFolders(maap craymap, folders ...string) {
 		for _, filename := range filenames {
 			bytes, err := Asset(path.Join(folder, filename))
 			if err != nil {
-				log.Error(err)
 				continue
 			}
 			m := make(craymap)
 			err = y2.Unmarshal(bytes, &m)
 			if err != nil {
-				log.Error(err)
 				continue
 			}
 			for locale, m2 := range m {

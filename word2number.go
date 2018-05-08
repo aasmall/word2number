@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/donna-legal/word2number/resources"
+	"github.com/aasmall/word2number/resources"
 )
 
 //go:generate go-bindata -pkg resources -o resources/resources.go -ignore=.*\.go resources
